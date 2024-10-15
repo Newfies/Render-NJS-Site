@@ -1,0 +1,26 @@
+/* Color Recommendations */  
+/* Note: First Color Is Darkest, Last One Is Lighest */
+    /* Dark Color Scheme */
+    /* 1A1A1A > 2E2E2E > 444444 */
+
+/* Font's Imported With GsLibrary */
+    /* font-family: 'Onest', sans-serif; */
+    /* font-family: 'Rubik', sans-serif; */
+    /* font-family: 'Ubuntu', sans-serif; */
+    /* font-family: 'Lato', sans-serif; */
+    /* font-family: 'Anton', sans-serif; */
+    /* font-family: 'Oswald', sans-serif; */
+    /* font-family: 'Luckiest Guy', cursive; */
+    /* font-family: 'Ubuntu Titling Bold', sans-serif; */
+    /* font-family: 'OnelySans', sans-serif; */ /* I Have Purchased A License To Use This For Commercial Purposes, But If You Haven't, Please Don't. */
+
+* {
+    user-select: none;
+    cursor: auto;
+    /* box-sizing: border-box; */
+}
+
+body {
+    background-color: #1A1A1A;
+    color: white;
+}
