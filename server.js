@@ -10,7 +10,7 @@ const fs = require('fs');
 const randomstring = require("randomstring");
 
 dotenv = require('dotenv').config()
-const port = 3000
+const port = 10000
 
 /* Paths */
 app.use(express.static(path.join(__dirname, 'public')));
