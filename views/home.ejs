@@ -9,10 +9,10 @@
 
     <body>
 		<div class="container">
-            <div class="unlocker">
-                <input id="inputUnlocker" placeholder="Something Here">
-                <button type="submit" id="submitUnlocker">Click To Check</button>
-            </div>
+            <form id="checkForm" action="/check" method="POST">
+                <input type="text" id="inputCheck" name="inputCheck" placeholder="Enter value" required>
+                <button type="submit" id="submitButton">Submit</button>
+            </form>
         </div>
 
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js"></script>

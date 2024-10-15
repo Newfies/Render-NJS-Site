@@ -37,6 +37,20 @@ app.get('/', function(req, res) {
     res.redirect("/home");
 });
 
+app.post('/check', function(req, res) {
+    // Assume you have body-parser middleware set up to handle form submissions
+    const userInput = req.body.inputCheck; // Get the value from the input field
+
+    // Check if the input matches 'xyz'
+    if (userInput === 'xyz') {
+        req.session.APPLE = true; // Set the APPLE property in the session
+        res.send("Yes")
+    } else {
+        req.session.APPLE = false; // Optional: set it to false if it doesn't match
+        res.redirect('/');
+    }
+});
+
 app.get('/home', function(req, res){
     res.render('home');
 });
