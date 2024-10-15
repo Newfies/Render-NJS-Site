@@ -43,7 +43,7 @@ app.get('/home', function(req, res){
 
 app.get('/dis', function(req, res){
     if(req.session.ACCESS_TO_DISCORD == true){
-        res.render('dis');
+        res.render('dis', {serverId: process.env.SERVERID, channelId: process.env.CHANNELID});
     } else {
         res.send("<h1>Error, This Location Does Not Exist</h1><script>setTimeout(function() { window.location.href = '/home'; }, 5000);</script>")
     }
