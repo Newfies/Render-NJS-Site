@@ -7,17 +7,10 @@ const requestIP = require('request-ip');
 const session = require('express-session');
 const https = require('https');
 const fs = require('fs');
-const moment = require('moment-timezone');
 const randomstring = require("randomstring");
-const fetch = require('node-fetch');
 
 dotenv = require('dotenv').config()
-
-/* Other Variables */
-let timezone = process.env.TIMEZONE || "America/Chicago";
-let rawCurrentDateTime = new Date();
-let currentDateTime = moment(rawCurrentDateTime).tz(timezone).format('MMMM Do YYYY, h:mm:ss a');
-const port = process.env.PORT || 3000;
+const port = 3000
 
 /* Paths */
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session({
-  secret: process.env.SECRET_SESSION,
+  secret: "dddddddddd",
   resave: false,
   saveUninitialized: true
 }));
