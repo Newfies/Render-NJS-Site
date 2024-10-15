@@ -41,6 +41,15 @@ app.get('/home', function(req, res){
     res.render('home');
 });
 
+app.get('/unlock', function(req, res){
+    if (req.session.ACCESS_TO_DISCORD == true){
+        var TUCGU0W2_status_var = "True";
+    } else {
+        var TUCGU0W2_status_var = "False";
+    }
+    res.render('unlock', {TUCGU0W2: TUCGU0W2_status_var});
+});
+
 app.get('/dis', function(req, res){
     if(req.session.ACCESS_TO_DISCORD == true){
         res.render('dis', {serverId: process.env.SERVERID, channelId: process.env.CHANNELID});

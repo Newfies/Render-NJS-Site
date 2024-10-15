@@ -1,0 +1,37 @@
+<html>
+
+    <head>
+        <title>Unlock - Live - GvNx</title>
+        <link rel="icon" sizes="512x512" href="https://placehold.co/512/red/orange/png?text=L">
+        <link rel="stylesheet" href="https://cdn.statically.io/gh/GsLibrary/Library/main/Fonts.css">
+        <link rel="stylesheet" href="_unlock/style.css">
+    </head>
+
+    <body>
+		<div class="container">
+            <form class="formUnlock" ="checkForm" action="/check" method="POST">
+                <h1>Unlock Menu</h1>
+                <input type="text" id="inputCheck" name="inputCheck" placeholder="Enter value" required>
+                <button type="submit" id="submitButton">Submit</button>
+            </form>
+            <form class="formLock" ="checkForm" action="/checkLock" method="POST">
+                <h1>Lock Menu</h1>
+                <input type="text" id="inputCheckLock" name="inputCheckLock" placeholder="Enter value" required>
+                <button type="submit" id="submitButton">Submit</button>
+            </form>
+            <div class="currents">
+                <h1>TUCGU0W2 - <span id="TUCGU0W2_id">X</span></h1>
+            </div>
+        </div>
+        <script>
+            const TUCGU0W2 = document.getElementById("TUCGU0W2_id");
+            TUCGU0W2.textContent = `<%= TUCGU0W2 %>`;
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+        <script src="https://cdn.statically.io/gh/GsLibrary/Library/main/NewScript.js"></script>
+        <script src="https://kit.fontawesome.com/5f8433758a.js"></script>
+        <script src="_unlock/script.js"></script>
+    </body>
+
+</html>
