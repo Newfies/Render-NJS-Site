@@ -8,6 +8,7 @@ const session = require('express-session');
 const https = require('https');
 const fs = require('fs');
 const randomstring = require("randomstring");
+const { createCanvas } = require('canvas');
 
 dotenv = require('dotenv').config()
 const port = 10000
@@ -57,6 +58,30 @@ app.get('/dis', function(req, res){
         res.send("<h1>Error, This Location Does Not Exist</h1><script>setTimeout(function() { window.location.href = '/home'; }, 5000);</script>")
     }
 });
+
+/* Canvas */
+app.get('/COLOR/:color/:format', (req, res) => {
+    const { color, format } = req.params;
+  
+    // Check if the requested format is supported
+    if (format !== 'png') {
+      return res.status(400).send('Unsupported format');
+    }
+  
+    // Create a 100x100 canvas
+    const canvas = createCanvas(100, 100);
+    const ctx = canvas.getContext('2d');
+  
+    // Set the background color from the URL
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+    // Set the content type for the response
+    res.setHeader('Content-Type', 'image/png');
+  
+    // Send the generated PNG image as a response
+    canvas.createPNGStream().pipe(res);
+  });
 
 app.get('*', function(req, res) {
     res.redirect("/home");
