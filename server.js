@@ -38,13 +38,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('/check', function(req, res) {
-    // Assume you have body-parser middleware set up to handle form submissions
     const userInput = req.body.inputCheck; // Get the value from the input field
-
-    // Check if the input matches 'xyz'
     if (userInput === 'xyz') {
-        req.session.APPLE = true; // Set the APPLE property in the session
-        res.send("Yes")
+        req.session.ACCESS_TO_DISCORD = true;
+        res.send("<h1>Unlocked Access To A Private Part Of The Website; Discord</h1><script>setTimeout(function() { window.location.href = '/home'; }, 5000);</script>");
     } else {
         req.session.APPLE = false; // Optional: set it to false if it doesn't match
         res.redirect('/');
