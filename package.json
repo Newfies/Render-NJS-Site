@@ -1,17 +1,11 @@
 {
-  "name": "dwt",
-  "version": "1.0.5",
-  "description": "Dynamic Website Template",
+  "name": "rendersite",
+  "version": "1.0.0",
+  "description": "Render NodeJS Site",
   "main": "server.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [
-    "Template",
-    "GsLibrary",
-    "Dynamic Website Template",
-    "DWT"
-  ],
   "author": "GsLibrary",
   "license": "ISC",
   "dependencies": {
