@@ -37,23 +37,31 @@ app.get('/', function(req, res) {
     res.redirect("/home");
 });
 
-app.post('/check', function(req, res) {
-    const userInput = req.body.inputCheck; // Get the value from the input field
-    if (userInput === 'xyz') {
-        req.session.ACCESS_TO_DISCORD = true;
-        res.send("<h1>Unlocked Access To A Private Part Of The Website; Discord</h1><script>setTimeout(function() { window.location.href = '/home'; }, 5000);</script>");
-    } else {
-        req.session.APPLE = false; // Optional: set it to false if it doesn't match
-        res.redirect('/');
-    }
-});
-
 app.get('/home', function(req, res){
     res.render('home');
 });
 
+app.get('/dis', function(req, res){
+    if(req.session.ACCESS_TO_DISCORD == true){
+        res.render('dis');
+    } else {
+        res.send("<h1>Error, This Location Does Not Exist</h1><script>setTimeout(function() { window.location.href = '/home'; }, 5000);</script>")
+    }
+});
+
 app.get('*', function(req, res) {
     res.redirect("/home");
+});
+
+/* Post */
+app.post('/check', function(req, res) {
+    const userInput = req.body.inputCheck; // Get the value from the input field
+    if (userInput === process.env.DISCORD_ACCESS_KEY) {
+        req.session.ACCESS_TO_DISCORD = true;
+        res.send("<h1>Unlocked Access To A Private Part Of The Website; Discord</h1><script>setTimeout(function() { window.location.href = '/home'; }, 5000);</script>");
+    } else {
+        res.redirect('/');
+    }
 });
 
 app.listen(port, () => {

@@ -1,0 +1,19 @@
+* {
+    user-select: none;
+    cursor: auto;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: white;
+}
+
+.container {
+    display: block;
+    margin: 10% auto;
+    width: 80%;
+    border: 1px solid red;
+    border-radius: 6px;
+}
